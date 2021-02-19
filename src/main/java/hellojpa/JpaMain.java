@@ -14,15 +14,7 @@ public class JpaMain {
         tx.begin();
 
         try {
-           Member member = new Member(150L, "A");
-           Member member1 = new Member(160L , "B");
-
-           em.persist(member1);
-           em.persist(member);
-            System.out.println("#########");
            tx.commit();
-
-
 
         }catch (Exception e) {
             tx.rollback();
