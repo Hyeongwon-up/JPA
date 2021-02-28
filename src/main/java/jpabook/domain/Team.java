@@ -1,22 +1,21 @@
 package jpabook.domain;
 
-
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class Member {
+public class Team {
 
     @Id
     @GeneratedValue
-    @Column(name = "MEMBER_ID")
+    @Column(name =" TEAM_ID")
     private Long id;
 
-    @Column(name = "USERNAME")
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TEAM_ID")
-    private Team team;
+    @OneToMany(mappedBy = "team") // 나의 반대편 변수명.
+    private List<Member> members = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -33,19 +32,4 @@ public class Member {
     public void setName(String name) {
         this.name = name;
     }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }
-/*
-    @Column(name = "TEAM_ID")
-    private Long teamId;
-
- */
-
 }
- 

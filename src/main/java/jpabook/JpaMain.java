@@ -1,5 +1,8 @@
 package jpabook;
 
+import jpabook.domain.Member;
+import jpabook.domain.Team;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -18,6 +21,24 @@ public class JpaMain {
         tx.begin();
 
         try{
+
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
+            Member member = new Member();
+            member.setName("Member1");
+            member.setTeam(team);
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            Member member1 = em.find(Member.class, member.getId());
+            Team team1 = member1.getTeam();
+
+            System.out.println(team1.getName());
+
+
             tx.commit();
         }catch (Exception e) {
             tx.rollback();
