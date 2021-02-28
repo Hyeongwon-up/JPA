@@ -1,4 +1,4 @@
-package jpabook;
+package jpabook.domain;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

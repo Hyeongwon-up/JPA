@@ -1,4 +1,4 @@
-package jpabook;
+package jpabook.domain;
 
 
 import javax.persistence.*;
@@ -10,6 +10,11 @@ public class Member {
     @GeneratedValue
     @Column(name = "MEMBER_ID")
     private Long id;
+    private String name;
+    private String street;
+    private String zipcode;
+
+    private
 
     public Long getId() {
         return id;
@@ -43,9 +48,7 @@ public class Member {
         this.zipcode = zipcode;
     }
 
-    private String name;
-    private String street;
-    private String zipcode;
+
 
 
 
