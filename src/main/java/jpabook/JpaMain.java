@@ -1,7 +1,8 @@
 package jpabook;
 
 import jpabook.domain.Member;
-import jpabook.domain.Team;
+import jpabook.domain.Order;
+import jpabook.domain.OrderItem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -22,25 +23,9 @@ public class JpaMain {
         tx.begin();
 
         try{
+            Order order = new Order();
+            order.addOrderItem(new OrderItem());
 
-            Team team = new Team();
-            team.setName("TeamA");
-            em.persist(team);
-            Member member = new Member();
-            member.setName("Member1");
-            member.setTeam(team);
-            em.persist(member);
-
-            em.flush();
-            em.clear();
-
-            Member member1 = em.find(Member.class, member.getId());
-            List<Member> members = member1.getTeam().getMembers();
-
-            for (Member member2 : members) {
-                System.out.println(member2.getName());
-
-            }
 
 
             tx.commit();
