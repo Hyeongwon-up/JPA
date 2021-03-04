@@ -3,9 +3,21 @@
 
 
 
+
+
 <details>
     <summary>STUDY MEMO</summary>
         <div markdown="1">
+        
+        <details>
+            <summary>## ORM (Object-Relational Mapping)</summary>
+                <div markdown="1">
+        
+    
+
+                </div>
+            </details>
+
 
 ## mappedBy
 
