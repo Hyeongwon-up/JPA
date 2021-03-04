@@ -4,14 +4,28 @@
 
 
 
+<details>
+<summary>영속성 컨텍스트 (persistence context)</summary>
+<div markdown="1">
 
-<details>
-    <summary>STUDY MEMO</summary>
-        <div markdown="1">
-        
-<details>
-            <summary>## ORM (Object-Relational Mapping)</summary>
-                <div markdown="1">
++ 영속성 컨텍스트 ?  엔티티를 영구 저장하는 환경
++ 엔티티의 생명주기
+    + 비영속 : 영속성 컨텍스트와 전혀 관계없는 상태
+    + 영속 : 영속성 컨텍스트에 저장된 상태
+    + 준영속 : 영속성 컨텍스트에 저장되었다가 분리된 상태
+    + 삭제 : 삭제된 상태.
+    
++ 영속성 컨텍스트가 엔티티를 관리할 떄 장점.
+    + 1차 캐시
+    + 동일성 보장
+    + 트랜잭션을 지원하는 쓰기 지연
+    + 변경 감지
+    + 지연 로딩
+
+
+
+
+
         
     
 
@@ -35,6 +49,3 @@
 + 주인이 아니면 mappedBy 속성으로 주인 지정
 
 + 외래 키가 잇는 곳을 주인으로 정하자!
-
-        </div>
-</details>
