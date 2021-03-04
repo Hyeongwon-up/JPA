@@ -9,14 +9,14 @@
     <summary>STUDY MEMO</summary>
         <div markdown="1">
         
-        <details>
+<details>
             <summary>## ORM (Object-Relational Mapping)</summary>
                 <div markdown="1">
         
     
 
-                </div>
-            </details>
+</div>
+</details>
 
 
 ## mappedBy
